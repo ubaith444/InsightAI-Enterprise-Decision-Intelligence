@@ -1,0 +1,54 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+*.db
+*.sqlite
+*.sqlite3
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+frontend/tsconfig.tsbuildinfo
+
+# Test and automation output
+playwright-report/
+test-results/
+docs/assets/demos/playwright-output/
+screenshots/.tmp/
+
+# Logs and local runtime state
+logs/
+*.log
+celerybeat-schedule
+*.pid
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Codex/session metadata
+.agents/
+.codex/

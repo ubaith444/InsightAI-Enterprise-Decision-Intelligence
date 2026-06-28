@@ -1,0 +1,10 @@
+flowchart TD
+  source[(Business Sources)] --> columns[Column-Level Lineage]
+  columns --> semantic[Semantic KPIs]
+  semantic --> sql[SQL / Aggregation Lineage]
+  sql --> transforms[Transformation History]
+  transforms --> dashboards[Dashboards]
+  transforms --> reports[Reports]
+  dashboards --> impact[Dashboard Impact Analysis]
+  reports --> impact[Report Impact Analysis]
+  impact --> governance[Governance + Approval]

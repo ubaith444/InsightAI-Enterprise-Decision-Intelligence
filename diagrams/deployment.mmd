@@ -1,0 +1,13 @@
+flowchart TD
+  github[GitHub Actions] --> images[Docker Images]
+  images --> compose[Docker Compose]
+  images --> k8s[Kubernetes Manifests]
+  compose --> pg[(PostgreSQL)]
+  compose --> mongo[(MongoDB)]
+  compose --> redis[(Redis)]
+  compose --> api[FastAPI]
+  compose --> worker[Celery Worker]
+  compose --> web[Next.js]
+  k8s --> ingress[Nginx Ingress]
+  ingress --> web
+  ingress --> api

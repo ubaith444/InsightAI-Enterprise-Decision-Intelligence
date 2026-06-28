@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: insightai-worker
+  namespace: insightai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: insightai-worker
+  template:
+    metadata:
+      labels:
+        app: insightai-worker
+    spec:
+      containers:
+        - name: worker
+          image: insightai-api:latest
+          imagePullPolicy: IfNotPresent
+          command: ["celery"]
+          args: ["-A", "app.core.celery_app.celery_app", "worker", "--loglevel=INFO"]
+          envFrom:
+            - configMapRef:
+                name: insightai-config
